@@ -1,38 +1,35 @@
 package ugyfelezes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Ugyfelezes extends Ugyfel {
-    
+
     public static void main(String[] args) {
-        
+
         Ugyfel ugyfel1 = new Ugyfel();
         Ugyfel ugyfel2 = new Ugyfel();
         Ugyfel ugyfel3 = new Ugyfel();
-        
-        Szamla szamla1 = new Szamla();
-        Szamla szamla2 = new Szamla();
-        Szamla szamla3 = new Szamla();
-        Szamla szamla4 = new Szamla();
-        Szamla szamla5 = new Szamla();
-        
-        
+
         ugyfel1.setNev("Gizi");
         ugyfel2.setNev("János");
         ugyfel3.setNev("Klára");
-        
-        ugyfel1.setId(0);
-        ugyfel2.setId(0);
-        ugyfel3.setId(0);
-        
-        szamla1.setSzam(123);
-        szamla2.setSzam(13455);
-        szamla3.setSzam(23);
-         szamla4.setSzam(21233);
-          szamla5.setSzam(23);
-        
-        System.out.println(ugyfel1.getId() + " " + ugyfel1.getNev());
-        System.out.println(ugyfel2.getId() + " " + ugyfel2.getNev());
-        System.out.println(ugyfel3.getId() + " " + ugyfel3.getNev());
-        
+
+
+        ugyfel1.getUgyfelSzamlai().add(new Szamla(13, "Villanyszámla", 6000, "11/02/2020"));
+        ugyfel1.getUgyfelSzamlai().add(new Szamla(21213, "Gázszámla", 11000, "11/12/1998"));
+        ugyfel1.getUgyfelSzamlai().add(new Szamla(2389, "Állatorvos", 29000, "21/02/2010"));
+        ugyfel1.getUgyfelSzamlai().add(new Szamla(8213, "Kötelező bizotsítás", 30000, "13/03/2008"));
+        ugyfel1.getUgyfelSzamlai().add(new Szamla(2978, "Hiteltörlesztés", 120000, "01/12/1993"));
+        ugyfel1.getUgyfelSzamlai().add(new Szamla(613, "Parkolási bírásg", 58670, "04/05/2016"));
+        ugyfel1.getUgyfelSzamlai().add(new Szamla(921113, "Vízszámla", 10000, "24/09/2000"));
+        ugyfel1.getUgyfelSzamlai().add(new Szamla(17653, "Új ruha", 8970, "16/01/2019"));
+
+   
+        System.out.println(ugyfel1);
+    
     }
     
+    
+
 }

@@ -1,30 +1,42 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ugyfelezes;
 
-/**
- *
- * @author User
- */
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Ugyfel {
 
-   
+    @Override
+    public String toString() {
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.id).append(" ").append(this.nev).append("\n");
+
+        for (Szamla szamla : ugyfelSzamlai) {
+            sb.append(szamla);
+            sb.append("\n");
+        }
+
+        return sb.toString();
+    }
 
     private static int kezdet = 100;
 
-    String nev;
-      int id;
+    private String nev;
+    private int id;
+    private List<Szamla> ugyfelSzamlai = new ArrayList<>();
+
+    public Ugyfel() {
+
+        this.id = kezdet++;
+    }
+
+    public List<Szamla> getUgyfelSzamlai() {
+        return ugyfelSzamlai;
+    }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id+kezdet;
-        kezdet++;
     }
 
     public String getNev() {
@@ -35,5 +47,4 @@ public class Ugyfel {
         this.nev = nev;
     }
 
-  
 }
