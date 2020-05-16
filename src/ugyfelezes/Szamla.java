@@ -3,7 +3,7 @@ package ugyfelezes;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Szamla implements Comparable<Szamla>, IDgeneralas {
+public class Szamla implements Comparable<Szamla> {
 
     private static int kezdet = 1000;
 
@@ -12,8 +12,8 @@ public class Szamla implements Comparable<Szamla>, IDgeneralas {
     private double osszeg;
     private Date szamlaDatum;
 
-    public Szamla( String szamlaMegnevezes, double osszeg, String szamlaDatum) {
-        this.szamlaSzam = idGeneralas();
+    public Szamla(String szamlaMegnevezes, double osszeg, String szamlaDatum) {
+        this.szamlaSzam = AzonositoGeneralas.szamlaidGeneralas();
         this.szamlaMegnevezes = szamlaMegnevezes;
         this.osszeg = osszeg;
         this.setSzamlaDatum(szamlaDatum);
@@ -69,13 +69,7 @@ public class Szamla implements Comparable<Szamla>, IDgeneralas {
         return r;
     }
 
-    @Override
-    public int idGeneralas() {
-
-        return kezdet++;
-
-    }
-
+   
     @Override
     public String toString() {
 

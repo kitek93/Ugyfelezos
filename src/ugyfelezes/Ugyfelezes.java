@@ -1,27 +1,25 @@
 package ugyfelezes;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 
 public class Ugyfelezes {
 
     public static void main(String[] args) {
-            
+
         UgyfelFacatory ugyfelFacatory = new UgyfelFacatory();
+
         Ugyfel ugyfel1 = ugyfelFacatory.ugyfelGyartas("Gizi");
         Ugyfel ugyfel2 = ugyfelFacatory.ugyfelGyartas("János");
         Ugyfel ugyfel3 = ugyfelFacatory.ugyfelGyartas("Klára");
 
-        ugyfel1.getUgyfelSzamlai().add(new Szamla( "Villanyszámla", 6000, "11/02/2020"));
-        ugyfel1.getUgyfelSzamlai().add(new Szamla( "Gázszámla", 11000, "11/12/1998"));
-        ugyfel1.getUgyfelSzamlai().add(new Szamla( "Állatorvos", 29000, "21/02/2010"));
-        ugyfel1.getUgyfelSzamlai().add(new Szamla( "Kötelező bizotsítás", 30000, "13/03/2008"));
-        ugyfel1.getUgyfelSzamlai().add(new Szamla( "Hiteltörlesztés", 120000, "01/12/1993"));
-        ugyfel1.getUgyfelSzamlai().add(new Szamla( "Parkolási bírásg", 58670, "04/05/2016"));
-        ugyfel1.getUgyfelSzamlai().add(new Szamla( "Vízszámla", 10000, "24/09/2000"));
-        ugyfel1.getUgyfelSzamlai().add(new Szamla( "Új ruha", 8970, "16/01/2019"));
+        ugyfel1.getUgyfelSzamlai().add(new Szamla("Villanyszámla", 6000, "11/02/2020"));
+        ugyfel1.getUgyfelSzamlai().add(new Szamla("Gázszámla", 11000, "11/12/1998"));
+        ugyfel1.getUgyfelSzamlai().add(new Szamla("Állatorvos", 29000, "21/02/2010"));
+        ugyfel1.getUgyfelSzamlai().add(new Szamla("Kötelező bizotsítás", 30000, "13/03/2008"));
+        ugyfel1.getUgyfelSzamlai().add(new Szamla("Hiteltörlesztés", 120000, "01/12/1993"));
+        ugyfel1.getUgyfelSzamlai().add(new Szamla("Parkolási bírásg", 58670, "04/05/2016"));
+        ugyfel1.getUgyfelSzamlai().add(new Szamla("Vízszámla", 10000, "24/09/2000"));
+        ugyfel1.getUgyfelSzamlai().add(new Szamla("Új ruha", 8970, "16/01/2019"));
 
         System.out.println("Rendezés előtt:");
         System.out.println(ugyfel1);
@@ -37,11 +35,9 @@ public class Ugyfelezes {
         System.out.println("Rendezés után, dátum szerint, comparator-ral");
         Collections.sort(ugyfel1.getUgyfelSzamlai(), new SortSzamlaByDate());
         System.out.println(ugyfel1);
-    
 
-    System.out.println("Rendezés után, számlaszám szerint, comparator-ral");
+        System.out.println("Rendezés után, számlaszám szerint, comparator-ral");
         Collections.sort(ugyfel1.getUgyfelSzamlai(), new SortbySzamlaID());
         System.out.println(ugyfel1);
     }
 }
-
