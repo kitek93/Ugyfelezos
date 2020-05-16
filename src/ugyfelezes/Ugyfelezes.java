@@ -40,6 +40,11 @@ public class Ugyfelezes extends Ugyfel {
         System.out.println("Rendezés után, dátum szerint, comparator-ral");
         Collections.sort(ugyfel1.getUgyfelSzamlai(), new SortSzamlaByDate());
         System.out.println(ugyfel1);
-    }
+    
 
+    System.out.println("Rendezés után, számlaszám szerint, comparator-ral");
+        Collections.sort(ugyfel1.getUgyfelSzamlai(), new SortbySzamlaID());
+        System.out.println(ugyfel1);
+    }
 }
+

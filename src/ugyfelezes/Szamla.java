@@ -69,15 +69,16 @@ public class Szamla implements Comparable<Szamla> {
     public int compareTo(Szamla o) {
 
         double kul = this.getOsszeg() - o.getOsszeg();
+        int r;
 
         if (kul == 0) {
-            return 0;
+            r = 0;
         } else if (kul > 0) {
-            return 1;
+            r = 1;
         } else {
-            return -1;
+            r = -1;
         }
-
+        return r;
     }
 
 }
