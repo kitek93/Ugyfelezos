@@ -20,15 +20,13 @@ public class Ugyfel {
         return sb.toString();
     }
 
-    private static int kezdet = 100;
-
     private String nev;
     private int id;
     private List<Szamla> ugyfelSzamlai = new ArrayList<>();
 
-    public Ugyfel() {
-
-        this.id = kezdet++;
+    public Ugyfel(int id, String nev) {
+        this.id = id;
+        this.nev = nev;
     }
 
     public List<Szamla> getUgyfelSzamlai() {

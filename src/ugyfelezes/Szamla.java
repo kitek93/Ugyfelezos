@@ -3,25 +3,17 @@ package ugyfelezes;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Szamla implements Comparable<Szamla> {
+public class Szamla implements Comparable<Szamla>, IDgeneralas {
 
-    @Override
-    public String toString() {
-
-        StringBuilder sb = new StringBuilder();
-        sb.append(this.szamlaSzam).append(" ").append(this.szamlaMegnevezes)
-                .append(" ").append(this.osszeg).append(" ").append(szamlaDatum);
-
-        return sb.toString();
-    }
+    private static int kezdet = 1000;
 
     private int szamlaSzam;
     private String szamlaMegnevezes;
     private double osszeg;
     private Date szamlaDatum;
 
-    public Szamla(int szamlaSzam, String szamlaMegnevezes, double osszeg, String szamlaDatum) {
-        this.szamlaSzam = szamlaSzam;
+    public Szamla( String szamlaMegnevezes, double osszeg, String szamlaDatum) {
+        this.szamlaSzam = idGeneralas();
         this.szamlaMegnevezes = szamlaMegnevezes;
         this.osszeg = osszeg;
         this.setSzamlaDatum(szamlaDatum);
@@ -29,10 +21,6 @@ public class Szamla implements Comparable<Szamla> {
 
     public int getSzamlaSzam() {
         return szamlaSzam;
-    }
-
-    public void setSzamlaSzam(int szamlaSzam) {
-        this.szamlaSzam = szamlaSzam;
     }
 
     public String getSzamlaMegnevezes() {
@@ -81,4 +69,20 @@ public class Szamla implements Comparable<Szamla> {
         return r;
     }
 
+    @Override
+    public int idGeneralas() {
+
+        return kezdet++;
+
+    }
+
+    @Override
+    public String toString() {
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.szamlaSzam).append(" ").append(this.szamlaMegnevezes)
+                .append(" ").append(this.osszeg).append(" ").append(szamlaDatum);
+
+        return sb.toString();
+    }
 }
