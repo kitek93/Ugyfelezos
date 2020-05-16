@@ -1,6 +1,8 @@
 package ugyfelezes;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class Ugyfelezes extends Ugyfel {
@@ -15,7 +17,6 @@ public class Ugyfelezes extends Ugyfel {
         ugyfel2.setNev("János");
         ugyfel3.setNev("Klára");
 
-
         ugyfel1.getUgyfelSzamlai().add(new Szamla(13, "Villanyszámla", 6000, "11/02/2020"));
         ugyfel1.getUgyfelSzamlai().add(new Szamla(21213, "Gázszámla", 11000, "11/12/1998"));
         ugyfel1.getUgyfelSzamlai().add(new Szamla(2389, "Állatorvos", 29000, "21/02/2010"));
@@ -25,11 +26,20 @@ public class Ugyfelezes extends Ugyfel {
         ugyfel1.getUgyfelSzamlai().add(new Szamla(921113, "Vízszámla", 10000, "24/09/2000"));
         ugyfel1.getUgyfelSzamlai().add(new Szamla(17653, "Új ruha", 8970, "16/01/2019"));
 
-   
+        System.out.println("Rendezés előtt:");
         System.out.println(ugyfel1);
-    
+
+        System.out.println("Rendezés után, összeg szerint, compareto-val:");
+        Collections.sort(ugyfel1.getUgyfelSzamlai());
+        System.out.println(ugyfel1);
+
+        System.out.println("Rendezés után, név szerint, comparator-ral");
+        Collections.sort(ugyfel1.getUgyfelSzamlai(), new SortSzamlaByName());
+        System.out.println(ugyfel1);
+
+        System.out.println("Rendezés után, dátum szerint, comparator-ral");
+        Collections.sort(ugyfel1.getUgyfelSzamlai(), new SortSzamlaByDate());
+        System.out.println(ugyfel1);
     }
-    
-    
 
 }

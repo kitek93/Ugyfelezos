@@ -3,7 +3,7 @@ package ugyfelezes;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Szamla {
+public class Szamla implements Comparable<Szamla> {
 
     @Override
     public String toString() {
@@ -11,7 +11,7 @@ public class Szamla {
         StringBuilder sb = new StringBuilder();
         sb.append(this.szamlaSzam).append(" ").append(this.szamlaMegnevezes)
                 .append(" ").append(this.osszeg).append(" ").append(szamlaDatum);
-        
+
         return sb.toString();
     }
 
@@ -61,6 +61,21 @@ public class Szamla {
 
         } catch (Exception e) {
             throw new IllegalArgumentException(e);
+        }
+
+    }
+
+    @Override
+    public int compareTo(Szamla o) {
+
+        double kul = this.getOsszeg() - o.getOsszeg();
+
+        if (kul == 0) {
+            return 0;
+        } else if (kul > 0) {
+            return 1;
+        } else {
+            return -1;
         }
 
     }
