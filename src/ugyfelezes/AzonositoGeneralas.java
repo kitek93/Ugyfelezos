@@ -1,29 +1,47 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ugyfelezes;
 
-/**
- *
- * @author User
- */
-public class AzonositoGeneralas  {
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
-   private static int ugyfelkezdet = 100;
-      private static int szamlakezdet = 100;
+public class AzonositoGeneralas {
 
+    private static int ugyfelkezdet = 100;
+    private static int szamlakezdet = 2000;
 
-    
     public static int ugyfelidGeneralas() {
-        
-        return ugyfelkezdet++;
 
-    }
-    
-     public static int szamlaidGeneralas() {
+       int a=  ugyfelkezdet++;
+
+        BufferedWriter bw = null;
+
+        try {
+            String filePath = System.getProperty("user.dir");
+            File file = new File(filePath + "/sajatfile.txt");
+
+            FileWriter fw = new FileWriter(file);
+
+            bw = new BufferedWriter(fw);
+            bw.write(String.valueOf(a));
+
+        } catch (IOException e) {
+            System.out.println("ERROR: " + e);
+        } finally {
+            try {
+                if (bw != null) {
+                    bw.close();
+                }
+            } catch (Exception e) {
+                System.out.println("BW close ERROR: " + e);
+            }
+        }
+        return a;
         
+    }
+
+    public static int szamlaidGeneralas() {
+
         return szamlakezdet++;
 
     }
