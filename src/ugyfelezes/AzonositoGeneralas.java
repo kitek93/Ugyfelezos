@@ -55,15 +55,12 @@ public class AzonositoGeneralas {
 
     private static int beolvasas() {
 
-        BufferedReader br = null;
+        String filePath = System.getProperty("user.dir");
+
         int i = 0;
 
-        try {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath + "/sajatfile.txt"))) {
             String strCurrentLine;
-
-            String filePath = System.getProperty("user.dir");
-
-            br = new BufferedReader(new FileReader(filePath + "/sajatfile.txt"));
 
             while ((strCurrentLine = br.readLine()) != null) {
 
@@ -73,17 +70,7 @@ public class AzonositoGeneralas {
 
             System.out.println("ERROR: " + e);
 
-        } finally {
-            try {
-                if (br != null) {
-                    br.close();
-                }
-            } catch (IOException e) {
-                System.out.println("BW close ERROR: " + e);
-
-            }
-
-        }
+        } 
         return i;
     }
 }
