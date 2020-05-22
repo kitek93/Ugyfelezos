@@ -21,23 +21,30 @@ public class Ugyfelezes {
         ugyfel1.getUgyfelSzamlai().add(new Szamla("Vízszámla", 10000, "24/09/2000"));
         ugyfel1.getUgyfelSzamlai().add(new Szamla("Új ruha", 8970, "16/01/2019"));
 
-        System.out.println("Rendezés előtt:");
+//        System.out.println("Rendezés előtt:");
+//        System.out.println(ugyfel1);
+//
+//        System.out.println("Rendezés után, összeg szerint, compareto-val:");
+//        Collections.sort(ugyfel1.getUgyfelSzamlai());
+//        System.out.println(ugyfel1);
+//
+//        System.out.println("Rendezés után, név szerint, comparator-ral");
+//        Collections.sort(ugyfel1.getUgyfelSzamlai(), new SortSzamlaByName());
+//        System.out.println(ugyfel1);
+//
+//        System.out.println("Rendezés után, dátum szerint, comparator-ral");
+//        Collections.sort(ugyfel1.getUgyfelSzamlai(), new SortSzamlaByDate());
+//        System.out.println(ugyfel1);
+//
+//        System.out.println("Rendezés után, számlaszám szerint, comparator-ral");
+//        Collections.sort(ugyfel1.getUgyfelSzamlai(), new SortbySzamlaID());
+//        System.out.println(ugyfel1);
         System.out.println(ugyfel1);
+        System.out.println(ugyfel2);
+        System.out.println(ugyfel3);
+        Ugyfel ugyfel4 = ugyfelFacatory.ugyfelGyartas("Juli");
+        
+        System.out.println(ugyfel4);
 
-        System.out.println("Rendezés után, összeg szerint, compareto-val:");
-        Collections.sort(ugyfel1.getUgyfelSzamlai());
-        System.out.println(ugyfel1);
-
-        System.out.println("Rendezés után, név szerint, comparator-ral");
-        Collections.sort(ugyfel1.getUgyfelSzamlai(), new SortSzamlaByName());
-        System.out.println(ugyfel1);
-
-        System.out.println("Rendezés után, dátum szerint, comparator-ral");
-        Collections.sort(ugyfel1.getUgyfelSzamlai(), new SortSzamlaByDate());
-        System.out.println(ugyfel1);
-
-        System.out.println("Rendezés után, számlaszám szerint, comparator-ral");
-        Collections.sort(ugyfel1.getUgyfelSzamlai(), new SortbySzamlaID());
-        System.out.println(ugyfel1);
     }
 }
